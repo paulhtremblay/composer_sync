@@ -7,6 +7,9 @@ steps:
      args: ["-m", "pip", "install", "build", "pytest", "twine", "--user"]
    - name: python
      entrypoint: python
+     args: ["-m", "pip", "install", "-r", "requirements.txt",  "--user"]
+   - name: python
+     entrypoint: python
      args: ["-m", "pytest", 'tests/' ]
    - name: python
      id: "BUILD WHEEL"
