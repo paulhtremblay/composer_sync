@@ -18,6 +18,7 @@ pp = pprint.PrettyPrinter(indent = 4)
 
 def _get_args():
     parser = argparse.ArgumentParser(description = 'sync composer')
+    parser.add_argument('directory',   help = 'directory', )
     parser.add_argument('--verbosity', '-v',  help = 'be verbose', type = int, default = 0)
     parser.add_argument('--project', '-p',  help = 'project name', required = True)
     parser.add_argument('--ignore', '-i',  help = 'ignore file')
@@ -187,7 +188,8 @@ def main():
     sync_bucket( bucket_name = args.bucket_name,
             verbosity = args.verbosity,
             project = args.project,
-           ignore_path = args.ignore
+           ignore_path = args.ignore,
+           directory = args.directory
             )
 
 
