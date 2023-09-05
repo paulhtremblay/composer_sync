@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sync-composer',
-    version='0.0.1',    
+    version='0.0.2',    
     description='sync composer and local',
     url='https://github.com/paulhtremblay/composer_sync',
     author='Henry Tremblay',
