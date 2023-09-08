@@ -122,7 +122,7 @@ def get_not_found_storage(storage_dict:dict, local_dict:dict) -> list:
 
 def delete_from_bucket(storage_client,  bucket_name, list_of_paths, verbosity = 0):
     if len(list_of_paths) == 0:
-        if verbosity> 1:
+        if verbosity> 0:
             print('No files to delete from bucket')
         return
     bucket = storage_client.bucket(bucket_name)
@@ -138,7 +138,7 @@ def upload_files_to_bucket(
         list_of_paths:list, 
         verbosity:int = 0):
     if len(list_of_paths) == 0:
-        if verbosity > 1:
+        if verbosity > 0:
             print('No files to upload')
         return
     bucket = storage_client.bucket(bucket_name)
