@@ -92,7 +92,7 @@ def _check_bucket_exists(
     bucket = storage_client.bucket(bucket_name)
     if not bucket.exists():
         raise ValueError(f'bucket {bucket_name} does not exist')
-    if verbosity > 0:
+    if verbosity > 2:
         print(f'bucket {bucket_name} exists')
 
 def _get_storage_d(
@@ -201,8 +201,6 @@ def sync_bucket(
     return not_found_local, diff + not_found_storage
 
 def main():
-    #path = '/home/henry/Downloads/paul-henry-tremblay-f45a9e9028d5.json'
-    #os.environ['GOOGLE_APPLICATION_CREDENTIALS'] =path 
     args = _get_args()
     sync_bucket( bucket_name = args.bucket_name,
             verbosity = args.verbosity,
